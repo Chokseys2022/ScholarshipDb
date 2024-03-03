@@ -39,13 +39,13 @@ const students = [
     id: 7,
     studentName: "Calvin Li",
     email: "email7@email.com",
-    contact: 101 - 202 - 3030,
+    contact: 10,
   },
   {
     id: 8,
     studentName: "Tiffany Chen",
     email: "email8@email.com",
-    contact: 404 - 505 - 6060,
+    contact: 4045056060,
   },
 ];
 

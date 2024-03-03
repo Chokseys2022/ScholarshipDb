@@ -24,8 +24,8 @@ const studentSchema = new mongoose.Schema({
   contact: {
     type: Number,
     required: [true, "Contact number is required"],
-    match: [
-      /^\d{3}-\d{3}-\d{4}$/,"Invalid contact number format"],//format XXX-XXX-XXXX
+    // match: [
+    //   /^\d{3}-\d{3}-\d{4}$/,"Invalid contact number format"],//format XXX-XXX-XXXX
       },
 });
 
