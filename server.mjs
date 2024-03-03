@@ -166,7 +166,7 @@ app.delete("essays/:id", async (req, res) => {
   try {
     await Essay.findByIdAndDelete(req.params.id);
 
-    res.status(200).json({ msg: "Item Deleted" });
+    res.status(200).json({ msg: "Item in essay schema deleted" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ msg: "Server Error" });
@@ -178,7 +178,7 @@ app.delete("/letters/:id", async (req, res) => {
   try {
     await Letter.findByIdAndDelete(req.params.id);
 
-    res.status(200).json({ msg: "Item Deleted" });
+    res.status(200).json({ msg: "Item in letter schema deleted" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ msg: "Server Error" });
@@ -190,7 +190,7 @@ app.delete("/students/:id", async (req, res) => {
   try {
     await Student.findByIdAndDelete(req.params.id);
 
-    res.status(200).json({ msg: "Item Deleted" });
+    res.status(200).json({ msg: "Item  in student schema deleted" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ msg: "Server Error" });
