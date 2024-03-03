@@ -6,7 +6,7 @@ const letterSchema = new mongoose.Schema({
     required: [true, "Letter field is required"],
   },
   recName: {
-    type: String,
+    type: { type: String, index: true },//indexing recommender name
     required: [true, "Recommendor name is required"],
   },
   gpa: {

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const studentSchema = new mongoose.Schema({
   id: {
-    type: Number,
+    type: { type: Number, index: true },
     required: [true, "ID is required"],
     unique: true,
   },

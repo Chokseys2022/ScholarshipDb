@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const essaysSchema = new mongoose.Schema({
   topic: {
-    type: String,
+    type: { type: String, index: true },//indexing for topic
     required: [true, "Topic is required"],
     enum: ["community service", "sports", "school clubs involvement", "success"],
   },
