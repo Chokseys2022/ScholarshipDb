@@ -7,7 +7,7 @@ const students = [
   },
   {
     id: 2,
-    studentName: "Another Name",
+    studentName: "Jack Ryan",
     email: "email2@email.com",
     contact: 987 - 654 - 3210,
   },
