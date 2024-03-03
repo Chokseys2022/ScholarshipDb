@@ -28,8 +28,6 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 //------------------------------------------------
-//GET
-
 //Seeded Routes for essays
 app.get("/seeds/essays", async (req, res) => {
   try {
@@ -68,9 +66,9 @@ app.get("/seeds/students", async (req, res) => {
 
 //--------------------------------------------
 
-//POST
+//CREATE
 
-//POST route for essays
+//CREATE route for essays
 app.post("/essays", async (req, res) => {
   try {
     let newEssay = new Essay(req.body);
@@ -83,7 +81,7 @@ app.post("/essays", async (req, res) => {
   }
 });
 
-//POST route for letters
+//CREATE route for letters
 app.post("/letters", async (req, res) => {
   try {
     let newLetter = new Letter(req.body);
@@ -96,7 +94,7 @@ app.post("/letters", async (req, res) => {
   }
 });
 
-//POST route for students
+//CREATE route for students
 app.post("/students", async (req, res) => {
   try {
     let newStudent = new Student(req.body);
@@ -109,10 +107,44 @@ app.post("/students", async (req, res) => {
   }
 });
 //----------------------------------------------------------------------
+//READ
 
-// //PUT/UPDATE
+//READ route for essays
+app.get("/essays", async (req, res) => {
+  try {
+    const allEssays = await Essay.find({});
+    res.json(allEssays);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Server Error" });
+  }
+});
 
-// //PUT route for essays
+//READ route for letters
+app.get("/letters", async (req, res) => {
+  try {
+    const allLetters = await Letter.find({});
+    res.json(allLetters);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Server Error" });
+  }
+});
+
+//READ route for students
+app.get("/students", async (req, res) => {
+  try {
+    const allStudents = await Student.find({});
+    res.json(allStudents);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Server Error" });
+  }
+});
+//------------------------------------------------------------
+//UPDATE
+
+//UPDATE route for essays
 app.put("/essays/:id", async (req, res) => {
   try {
     const updatedEssay = await Essay.findByIdAndUpdate(
@@ -128,7 +160,7 @@ app.put("/essays/:id", async (req, res) => {
   }
 });
 
-//PUT route for letters
+//UPDATE route for letters
 app.put("/letters/:id", async (req, res) => {
   try {
     const updatedLetter = await Letter.findByIdAndUpdate(
@@ -144,7 +176,7 @@ app.put("/letters/:id", async (req, res) => {
   }
 });
 
-//PUT route for students
+//UPDATE route for students
 app.put("/students/:id", async (req, res) => {
   try {
     const updatedStudent = await Student.findByIdAndUpdate(
