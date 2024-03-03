@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3000;
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to MongoDB");
   } catch (error) {
-    console.error("Error connecting to MongoDB:");
+    throw console.error("Error connecting to MongoDB:");
   }
 })();
 
@@ -37,7 +37,7 @@ app.get("/seeds/essays", async (req, res) => {
     await Essay.create(essays);
     res.send(`Essay Database Seeded`);
   } catch (error) {
-    console.error(error);
+    throw console.error(error);
     res.status(500).send("Error seeding essays");
   }
 });
@@ -49,7 +49,7 @@ app.get("/seeds/letters", async (req, res) => {
     await Letter.create(letters);
     res.send(`Letter Database Seeded`);
   } catch (error) {
-    console.error(error);
+    throw console.error(error);
     res.status(500).send("Error seeding letters");
   }
 });
@@ -61,7 +61,7 @@ app.get("/seeds/students", async (req, res) => {
     await Student.create(students);
     res.send(`Student Database Seeded`);
   } catch (error) {
-    console.error(error);
+    throw console.error(error);
     res.status(500).send("Error seeding students");
   }
 });
@@ -78,7 +78,7 @@ app.post("/essays", async (req, res) => {
 
     res.json(newEssay);
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -91,7 +91,7 @@ app.post("/letters", async (req, res) => {
 
     res.json(newLetter);
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -104,7 +104,7 @@ app.post("/students", async (req, res) => {
 
     res.json(newStudent);
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -123,7 +123,7 @@ app.put("/essays/:id", async (req, res) => {
 
     res.json(updatedEssay);
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -139,7 +139,7 @@ app.put("/letters/:id", async (req, res) => {
 
     res.json(updatedLetter);
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -155,7 +155,7 @@ app.put("/students/:id", async (req, res) => {
 
     res.json(updatedStudent);
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -168,7 +168,7 @@ app.delete("essays/:id", async (req, res) => {
 
     res.status(200).json({ msg: "Item in essay schema deleted" });
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -180,7 +180,7 @@ app.delete("/letters/:id", async (req, res) => {
 
     res.status(200).json({ msg: "Item in letter schema deleted" });
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -192,7 +192,7 @@ app.delete("/students/:id", async (req, res) => {
 
     res.status(200).json({ msg: "Item  in student schema deleted" });
   } catch (err) {
-    console.error(err);
+    throw console.error(err);
     res.status(500).json({ msg: "Server Error" });
   }
 });
