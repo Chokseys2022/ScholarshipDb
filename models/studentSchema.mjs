@@ -10,6 +10,7 @@ const studentSchema = new mongoose.Schema({
   studentName: {
     type: String,
     required: [true, "Student name is required"],
+    maxlength:[50, "Student name must not exceed 50 char"],
   },
   email: {
     type: String,
@@ -23,7 +24,9 @@ const studentSchema = new mongoose.Schema({
   contact: {
     type: Number,
     required: [true, "Contact number is required"],
-  },
+    match: [
+      /^\d{3}-\d{3}-\d{4}$/,"Invalid contact number format"],//format XXX-XXX-XXXX
+      },
 });
 
 export default mongoose.model("Student", studentSchema);
