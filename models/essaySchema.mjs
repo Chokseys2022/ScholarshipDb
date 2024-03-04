@@ -30,3 +30,5 @@ const essaysSchema = new mongoose.Schema({
 });
 
 export default mongoose.model("Essay", essaysSchema);
+
+//------------------------------END CODE----------------------------------------//

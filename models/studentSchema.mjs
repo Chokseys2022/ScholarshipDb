@@ -31,3 +31,5 @@ const studentSchema = new mongoose.Schema({
 });
 
 export default mongoose.model("Student", studentSchema);
+
+//------------------------------END CODE----------------------------------------//

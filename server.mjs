@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 3000;//define port
 //Middleware
 app.use(express.json());//parse JSON
 
-//------------------------------------------------
+//-------------------------------------------------------------
 //Seeded Routes for essays
 app.get("/seeds/essays", async (req, res) => {
   try {
@@ -64,10 +64,9 @@ app.get("/seeds/students", async (req, res) => {
   }
 });
 
-//--------------------------------------------
-
+//--------------------------------------------------
 //CREATE
-
+//--------------------------------------------------
 //CREATE route for essays
 app.post("/essays", async (req, res) => {
   try {
@@ -108,7 +107,7 @@ app.post("/students", async (req, res) => {
 });
 //----------------------------------------------------------------------
 //READ
-
+//----------------------------------------------------------------------
 //READ route for essays
 app.get("/essays", async (req, res) => {
   try {
@@ -143,7 +142,7 @@ app.get("/students", async (req, res) => {
 });
 //------------------------------------------------------------
 //UPDATE
-
+//------------------------------------------------------------
 //UPDATE route for essays
 app.put("/essays/:id", async (req, res) => {
   try {
@@ -193,6 +192,7 @@ app.put("/students/:id", async (req, res) => {
 });
 //----------------------------------------------------------
 //DELETE
+//----------------------------------------------------------
 //DELETE route for essays
 app.delete("essays/:id", async (req, res) => {
   try {
@@ -237,3 +237,5 @@ app.use((err, _req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+//------------------------------END CODE----------------------------------------//

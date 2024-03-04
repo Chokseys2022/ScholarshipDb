@@ -10,7 +10,7 @@ const letterSchema = new mongoose.Schema({
   recName: {
     type: String,
     required: [true, "Recommendor name is required"],
-    index:true,
+    index: true,
   },
   gpa: {
     type: Number,
@@ -20,3 +20,5 @@ const letterSchema = new mongoose.Schema({
 });
 
 export default mongoose.model("Letter", letterSchema);
+
+//------------------------------END CODE----------------------------------------//
