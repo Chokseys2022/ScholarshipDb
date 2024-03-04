@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 //define essay schema
 const essaysSchema = new mongoose.Schema({
- //essay topics
+  //essay topics
   topic: {
     type: String,
     required: [true, "Topic is required"],
@@ -11,8 +11,7 @@ const essaysSchema = new mongoose.Schema({
       "sports participation",
       "school clubs involvement",
       "define success",
-      "arts or music",
-      "Navy ROTC"
+      "arts or music"
     ],
     index: true, //indexed topic
   },
@@ -20,7 +19,7 @@ const essaysSchema = new mongoose.Schema({
   group: {
     type: String,
     required: [true, "Group is required"],
-    enum: ["Latin Alliance", "WHCC", "KAAPA", "CAAPA"],
+    enum: ["Latin Alliance", "WHCC", "KAAPA", "CAAPA", "Navy ROTC"],
   },
   //dollar amount awarded
   award: {
