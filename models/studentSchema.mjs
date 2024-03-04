@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Define the schema for students
 const studentSchema = new mongoose.Schema({
   id: {
     type: Number, 

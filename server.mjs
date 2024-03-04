@@ -10,9 +10,9 @@ import letters from "./utilities/dataL.js";
 import students from "./utilities/dataS.js";
 
 //Configurations
-dotenv.config();
-const app = express();
-const PORT = process.env.PORT || 3000;
+dotenv.config(); //load env variables from .env file
+const app = express(); //create an express server
+const PORT = process.env.PORT || 3000;//define port
 
 // Connect to MongoDB
 (async () => {
@@ -25,14 +25,14 @@ const PORT = process.env.PORT || 3000;
 })();
 
 //Middleware
-app.use(express.json());
+app.use(express.json());//parse JSON
 
 //------------------------------------------------
 //Seeded Routes for essays
 app.get("/seeds/essays", async (req, res) => {
   try {
-    await Essay.deleteMany({});
-    await Essay.create(essays);
+    await Essay.deleteMany({});//delete existing essays
+    await Essay.create(essays);//create new essays from seed data
     res.send(`Essay Database Seeded`);
   } catch (error) {
     throw console.error(error);
@@ -72,7 +72,7 @@ app.get("/seeds/students", async (req, res) => {
 app.post("/essays", async (req, res) => {
   try {
     let newEssay = new Essay(req.body);
-    await newEssay.save();
+    await newEssay.save();//save new essay to db
 
     res.json(newEssay);
   } catch (err) {
@@ -112,7 +112,7 @@ app.post("/students", async (req, res) => {
 //READ route for essays
 app.get("/essays", async (req, res) => {
   try {
-    const allEssays = await Essay.find({});
+    const allEssays = await Essay.find({});//retrieve all essays from db
     res.json(allEssays);
   } catch (err) {
     console.error(err);
@@ -150,7 +150,7 @@ app.put("/essays/:id", async (req, res) => {
     const updatedEssay = await Essay.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true }
+      { new: true }//returns updated essays
     );
 
     res.json(updatedEssay);
@@ -196,7 +196,7 @@ app.put("/students/:id", async (req, res) => {
 //DELETE route for essays
 app.delete("essays/:id", async (req, res) => {
   try {
-    await Essay.findByIdAndDelete(req.params.id);
+    await Essay.findByIdAndDelete(req.params.id);//delete essay by id
 
     res.status(200).json({ msg: "Item in essay schema deleted" });
   } catch (err) {

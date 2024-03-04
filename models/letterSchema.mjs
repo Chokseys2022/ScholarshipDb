@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
 
+// Define the schema letters
 const letterSchema = new mongoose.Schema({
   letter: {
     type: Boolean,
     required: [true, "Letter field is required"],
   },
+  //Name of the recommender
   recName: {
     type: String,
     required: [true, "Recommendor name is required"],
