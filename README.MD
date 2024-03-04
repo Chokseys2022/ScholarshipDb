@@ -33,15 +33,15 @@ The students schema includes the following fields:
 
 ## Data Files
 
-- **essays.js**: Contains an array of sample essay objects representing essays submitted by students.
+- **essays.js**: Contains an array of essay objects representing essays submitted by students.
 
   - Each essay object includes properties such as topic, group, and award.
 
-- **letters.js**: Contains an array of sample recommendation letter objects provided by recommenders.
+- **letters.js**: Contains an array of recommendation letter objects provided by recommenders.
 
   - Each letter object includes properties such as letter, recName, and GPA.
 
-- **students.js**: Contains an array of sample student objects representing student information.
+- **students.js**: Contains an array of student objects representing student information.
   - Each student object includes properties such as id, studentName, email, and contact.
 
 ## ENDPOINTS
@@ -65,3 +65,12 @@ The students schema includes the following fields:
   - POST /students: Create a new student
   - PUT /students/:id: Update an existing student
   - DELETE /students/:id: Delete a student by ID
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- dotenv
+- Visual Studio Code
