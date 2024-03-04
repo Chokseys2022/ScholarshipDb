@@ -18,7 +18,7 @@ The essays schema includes the following fields:
 
 The letters schema includes the following fields:
 
-- **letter**: letter of recomendation submitted
+- **letter**: letter of recomendation submitted or not
 - **recName**: the name of the recommender
 - **gpa**: tudents GPA (Grade Point Average)
 
@@ -31,7 +31,7 @@ The students schema includes the following fields:
 - **email**: student email
 - **contact**:student contact
 
-## Data Files
+## DATA FILES
 
 - **essays.js**: Contains an array of essay objects representing essays submitted by students.
 
@@ -66,7 +66,7 @@ The students schema includes the following fields:
   - PUT /students/:id: Update an existing student
   - DELETE /students/:id: Delete a student by ID
 
-## Technologies Used
+## TECHNOLOGIES USED
 
 - Node.js
 - Express.js

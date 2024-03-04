@@ -8,9 +8,11 @@ const essaysSchema = new mongoose.Schema({
     required: [true, "Topic is required"],
     enum: [
       "community service",
-      "sports",
+      "sports participation",
       "school clubs involvement",
-      "success",
+      "define success",
+      "arts or music",
+      "Navy ROTC"
     ],
     index: true, //indexed topic
   },
