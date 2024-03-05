@@ -76,5 +76,5 @@ The students schema includes the following fields:
 - Visual Studio Code
 
 ### MongoDb Validation Image
-![Alt Text](images/Student Validation - MongoDb - Screenshot.png)
 
+![Alt Text](images/validation.png)
